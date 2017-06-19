@@ -1,0 +1,31 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext {
+        supportLibraryVersion = '25.3.1'
+        butterknifeVersion = '8.6.0'
+        picassoVersion = '2.5.2'
+        retrofitVersion = '2.3.0'
+        gsmVersion = '11.0.0'
+    }
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath "com.jakewharton:butterknife-gradle-plugin:$butterknifeVersion"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

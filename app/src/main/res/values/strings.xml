@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">TestAppToPostindustria</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Navigation menu items -->
+    <string name="nav_search">Search</string>
+    <string name="nav_nearby">Nearby</string>
+    <string name="nav_favourites">Favourites</string>
+
+    <!-- Snackbar messages -->
+    <string name="message_tweet_unfavourite">Tweet was removed from favourites</string>
+    <string name="message_tweet_favourite">Tweet was added to favourites</string>
+    <string name="message_error_get_location">Can\'t get current location</string>
+    <string name="message_error_get_tweets">Can\'t load tweets</string>
+    <string name="message_error_get_token">Can\'t register application</string>
+</resources>
