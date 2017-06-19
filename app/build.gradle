@@ -7,6 +7,7 @@ android {
     defaultConfig {
         applicationId "com.sandradita.testapptopostindustria"
         minSdkVersion 21
+        multiDexEnabled true
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -36,10 +37,9 @@ dependencies {
 
     //Data
     compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
 
     //Android support libraries
-    compile "com.google.android.gms:play-services:$rootProject.ext.gsmVersion"
     compile "com.google.android.gms:play-services-location:$rootProject.ext.gsmVersion"
     compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"

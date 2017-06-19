@@ -81,7 +81,7 @@ public class NearbyFragment extends BaseTweetRequestListFragment {
         if (requestCode == REQUEST_PERMISSIONS) {
             for (int result : grantResults) {
                 if (result != PackageManager.PERMISSION_GRANTED) {
-                    onLoadTweetsError();
+                    onLocationError();
                     return;
                 }
             }
@@ -89,7 +89,13 @@ public class NearbyFragment extends BaseTweetRequestListFragment {
         }
     }
 
-    private void onLoadTweetsError() {
+    private void onLocationError() {
+        onReadFinished();
+        Snackbar.make(getView(), R.string.message_error_get_location, Snackbar.LENGTH_SHORT).show();
+    }
+
+        private void onLoadTweetsError() {
+        onReadFinished();
         Snackbar.make(getView(), R.string.message_error_get_tweets, Snackbar.LENGTH_SHORT).show();
     }
 
@@ -100,8 +106,7 @@ public class NearbyFragment extends BaseTweetRequestListFragment {
         @Override
         public void onSuccess(Location location) {
             if (location == null) {
-                onReadFinished();
-                Snackbar.make(getView(), R.string.message_error_get_location, Snackbar.LENGTH_SHORT).show();
+                onLocationError();
             } else {
                 TwitterDataManager.getInstance().search(location, mSearchCallback);
             }

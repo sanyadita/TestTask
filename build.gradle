@@ -6,7 +6,7 @@ buildscript {
         butterknifeVersion = '8.6.0'
         picassoVersion = '2.5.2'
         retrofitVersion = '2.3.0'
-        gsmVersion = '11.0.0'
+        gsmVersion = '11.0.1'
     }
     repositories {
         jcenter()

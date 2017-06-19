@@ -23,6 +23,8 @@ import com.sandradita.testapptopostindustria.ui.fragments.FavouritesFragment;
 import com.sandradita.testapptopostindustria.ui.fragments.NearbyFragment;
 import com.sandradita.testapptopostindustria.ui.fragments.SearchFragment;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -94,6 +96,18 @@ public class MainActivity extends AppCompatActivity
 
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grants) {
+        List<Fragment> fragments = getSupportFragmentManager().getFragments();
+        if (fragments != null) {
+            for (Fragment fragment : fragments) {
+                if (fragment != null) {
+                    fragment.onRequestPermissionsResult(requestCode, permissions, grants);
+                }
+            }
+        }
     }
 
     /**
